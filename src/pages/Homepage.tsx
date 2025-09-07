@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Users, Calendar, Award, ArrowRight, Crown, Mountain, Building } from 'lucide-react';
+import { MapPin, Calendar, Award, ArrowRight, Crown, Mountain, Building } from 'lucide-react';
 import { heritageSites } from '../data/heritageSites';
 import HeritageSiteCard from '../components/HeritageSiteCard';
 import SearchFilter from '../components/SearchFilter';
@@ -9,7 +9,6 @@ const Homepage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedState, setSelectedState] = useState('all');
-  const [visitorCount, setVisitorCount] = useState(0);
 
   const filteredSites = useMemo(() => {
     return heritageSites.filter(site => {
@@ -25,11 +24,6 @@ const Homepage: React.FC = () => {
   }, [searchTerm, selectedCategory, selectedState]);
 
   const featuredSites = heritageSites.slice(0, 3);
-
-  // Increment visitor count when the component mounts
-  useEffect(() => {
-    setVisitorCount(prevCount => prevCount + 1);
-  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">
@@ -64,16 +58,10 @@ const Homepage: React.FC = () => {
               Explore Heritage Sites
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
-            <Link
-              to="#about"
-              className="inline-flex items-center px-8 py-3 bg-white text-amber-700 font-semibold rounded-lg hover:bg-amber-50 transition-all duration-200 shadow-lg border border-amber-200"
-            >
-              Learn More
-            </Link>
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-12 h-12 bg-amber-100 rounded-lg mb-3">
                 <Building className="h-6 w-6 text-amber-600" />
@@ -87,13 +75,6 @@ const Homepage: React.FC = () => {
               </div>
               <div className="text-3xl font-bold text-gray-900 mb-1">5+</div>
               <div className="text-sm text-gray-600">States Covered</div>
-            </div>
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-green-100 rounded-lg mb-3">
-                <Users className="h-6 w-6 text-green-600" />
-              </div>
-              <div className="text-3xl font-bold text-gray-900 mb-1">{visitorCount}</div>
-              <div className="text-sm text-gray-600">Visitors</div>
             </div>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-12 h-12 bg-purple-100 rounded-lg mb-3">
