@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Mail, Phone, Github, ExternalLink } from 'lucide-react';
+import { MapPin, Mail, Github, ExternalLink } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
               </div>
             </div>
             <p className="text-amber-100 mb-6 max-w-md">
-              Preserving and promoting India's rich cultural heritage through innovative digital solutions. 
+              Preserving and promoting India's rich cultural heritage through innovative digital solutions.
               Explore our magnificent heritage sites with instant QR code access.
             </p>
             <div className="flex space-x-4">

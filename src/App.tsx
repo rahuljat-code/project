@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Homepage from './pages/Homepage';
 import HeritageSitesList from './pages/HeritageSitesList';
 import HeritageSiteDetail from './pages/HeritageSiteDetail';
+import AboutSection from './components/AboutSection';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/" element={<Homepage />} />
             <Route path="/heritage-sites" element={<HeritageSitesList />} />
             <Route path="/heritage-site/:id" element={<HeritageSiteDetail />} />
+            <Route path="/about" element={<AboutSection />} />
           </Routes>
         </main>
         <Footer />

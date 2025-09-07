@@ -43,12 +43,16 @@ const Navbar: React.FC = () => {
             >
               Heritage Sites
             </Link>
-            <a
-              href="#about"
-              className="text-amber-100 hover:bg-amber-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors"
+            <Link
+              to="/about"
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                isActive('/about') 
+                  ? 'bg-amber-700 text-white' 
+                  : 'text-amber-100 hover:bg-amber-700 hover:text-white'
+              }`}
             >
               About
-            </a>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -88,13 +92,17 @@ const Navbar: React.FC = () => {
               >
                 Heritage Sites
               </Link>
-              <a
-                href="#about"
+              <Link
+                to="/about"
                 onClick={() => setIsMenuOpen(false)}
-                className="block text-amber-100 hover:bg-amber-700 hover:text-white px-3 py-2 rounded-md text-base font-medium transition-colors"
+                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                  isActive('/about') 
+                    ? 'bg-amber-700 text-white' 
+                    : 'text-amber-100 hover:bg-amber-700 hover:text-white'
+                }`}
               >
                 About
-              </a>
+              </Link>
             </div>
           </div>
         )}

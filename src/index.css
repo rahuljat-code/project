@@ -1,3 +1,102 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom background for body */
+body {
+  background: linear-gradient(135deg, #f8fafc 0%, #ffe0b2 100%);
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  color: #3d2c1e;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* Footer styles */
+footer {
+  background: linear-gradient(90deg, #8d5524 0%, #c68642 100%);
+  box-shadow: 0 -2px 16px rgba(141,85,36,0.08);
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+}
+
+footer p {
+  font-size: 1rem;
+  color: #ffe0b2;
+  margin-bottom: 0.5rem;
+}
+
+footer .text-center {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #fff3e0;
+}
+
+/* Card styles */
+.card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(141,85,36,0.12);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 32px rgba(141,85,36,0.18);
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* Navbar styles */
+nav {
+  background: linear-gradient(90deg, #8d5524 0%, #c68642 100%);
+  box-shadow: 0 2px 12px rgba(141,85,36,0.08);
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 24px;
+}
+
+nav a {
+  color: #ffe0b2;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+
+nav a:hover, nav a.active {
+  background: #ffe0b2;
+  color: #8d5524;
+}
+
+/* Button styles */
+button, .btn {
+  background: linear-gradient(90deg, #ff9800 0%, #ffb74d 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(255,152,0,0.08);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+button:hover, .btn:hover {
+  background: linear-gradient(90deg, #fb8c00 0%, #ffd54f 100%);
+  box-shadow: 0 4px 16px rgba(255,152,0,0.12);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .card {
+    padding: 1rem;
+  }
+  footer {
+    border-radius: 0;
+    padding: 1rem 0.5rem;
+  }
+}
